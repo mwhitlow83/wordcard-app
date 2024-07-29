@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import WordCard from './components/WordCard';
+import WordForm from './WordForm/WordForm';
 import './App.css';
 
 function App() {
+
+  const [words, setWords] = useState([
+    {front: 'my name', back: 'matt'},
+    {front: 'age', back: '30'},
+    {front: 'age', back: '30'},
+    {front: 'age', back: '30'}
+  ]);
+  
+  const cardList = words.map( word =>
+  <WordCard 
+  front={words.front} 
+  back={words.back}
+  keys={words.front} />
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h className="app-header">Dictionary</h>
+    
+        <main >
+     
+      <WordForm />   
+
+      <section className='cards-container'>
+       {cardList}
+      </section>
+        </main>
     </div>
   );
 }
