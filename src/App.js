@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-    <h className="app-header">Dictionary</h>
+    <H1 className="app-header" >Dictionary</H1>
     
         <main >
      
