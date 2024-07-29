@@ -3,7 +3,7 @@ import React from 'react'
 export default function WordForm() {
   return (
     <section className="card-form">
-  <H2>New Card</H2>
+  <h2>New Card</h2>
   <form actionm="#" method="get">
     <div className="form-row">
       <label>

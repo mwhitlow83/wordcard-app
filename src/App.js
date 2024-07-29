@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import WordCard from './components/WordCard';
-import WordForm from './WordForm/WordForm';
+import react, { useState } from 'react';
+import WordForm from './components/WordForm';
+import WordCard from './components/WordCard'
 import './App.css';
+import './components/WordCard.css';
 
 function App() {
 
@@ -14,22 +15,19 @@ function App() {
   
   const cardList = words.map( word =>
   <WordCard 
-  front={words.front} 
-  back={words.back}
-  keys={words.front} />
+  front={word.front} 
+  back={word.back}
+  keys={word.front} />
   );
 
   return (
     <div className="App">
-    <H1 className="app-header" >Dictionary</H1>
-    
-        <main >
-     
-      <WordForm />   
-
-      <section className='cards-container'>
-       {cardList}
-      </section>
+    <h1 className="app-header" >Dictionary</h1>   
+        <main>    
+            <WordForm />   
+            <section className='cards-container'>
+            {cardList}
+            </section>
         </main>
     </div>
   );
